@@ -1,10 +1,15 @@
-var App = angular.module('myApp', ['ngRoute','ngCookies','userApp']);
+var app = angular.module('myApp', ['ngRoute','ngCookies','userApp','blogapp','friendApp']);
 
 
-	App.config(function($routeProvider) 
+	app.config(function($routeProvider) 
 			{
 		
 		$routeProvider
+		.when("/home", {
+			templateUrl : "Home.html",
+			controller : 'LoginController',
+			controllerAs : 'vm'
+		})
 		
 		.when("/register", {
 			templateUrl : "Users/register.html",
@@ -12,7 +17,8 @@ var App = angular.module('myApp', ['ngRoute','ngCookies','userApp']);
 		})
 		.when("/login", {
 			templateUrl : "Login/Login.html",
-			controller : "loginctrl",
+			controller : 'LoginController',
+			controllerAs : 'vm'
 		
 		})
 
@@ -21,6 +27,10 @@ var App = angular.module('myApp', ['ngRoute','ngCookies','userApp']);
 			controller : "blogctrl",
 		
 		})
+		.when("/users", {
+			templateUrl : "Friends/AllUsers.html",
+			controller : "alluserctrl",
+		
+		})
 		
 	});
-

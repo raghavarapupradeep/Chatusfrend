@@ -1,5 +1,6 @@
-var app=angular.module("blogapp",[])
-app.controller('blogcntrl', [ '$scope', '$http',function($scope, $http) {
+var app=angular.module('blogapp',[]);
+app.controller('blogctrl', [ '$scope', '$http','$rootScope', '$cookieStore',
+	function($scope, $http, $rootScope, $cookieStore) {
 	var BASE_URL = 'http://localhost:8181/ChatusBackend';
 	$scope.getAllBlogs= function() {
 		console.log("get all blogs")
@@ -9,7 +10,7 @@ app.controller('blogcntrl', [ '$scope', '$http',function($scope, $http) {
 		}).success(function(data, status, headers, config) {
 			$scope.blogs=data;
 			angular.forEach($scope.blogs, function(value, key){
-			      //if(value.Password == "thomasTheKing")
+			    
 				var user=value.userid
 			         console.log(user);
 			   });
@@ -31,12 +32,7 @@ app.controller('blogcntrl', [ '$scope', '$http',function($scope, $http) {
 			url : BASE_URL + '/createblog',
 			data : $scope.blog
 		}).success(function(data, status, headers, config) {
-			/*$scope.id='';
-			$scope.title='';
-			$scope.userid='';
-			$scope.doc='';
-			$scope.content='';
-			$location.url($location.path());*/
+			
 		});
 	};
 	$scope.deleteblog=function(id){

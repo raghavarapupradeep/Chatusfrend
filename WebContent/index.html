@@ -3,19 +3,19 @@
 <head>
 
 <style>
-.carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 70%;
-	margin: auto;
+img {
+    max-width:300%;
+    height: auto;
 }
 </style>
 
 <meta charset="ISO-8859-1">
-<title>chatus</title>
+<title>ChatUs.Com||Home</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
 <script type="text/javascript" src="resources/angular.min.js"></script>
 <script type="text/javascript" src="resources/angular-route.js"></script>
 <script type="text/javascript" src="resources/angular-cookies.js"></script>
@@ -28,6 +28,11 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
 
 <script type="text/javascript" src="Users/userctrl.js"></script>
+<script type="text/javascript" src="Login/loginctrl.js"></script>
+<script type="text/javascript" src="Login/loginService.js"></script>
+<script type="text/javascript" src="Blog/blogctrl.js"></script>
+<script type="text/javascript" src="Friends/alluserctrl.js"></script>
+<script type="text/javascript" src="Friends/MyfriendCtrl.js"></script>
 
 <script type="text/javascript" src="app.js"></script>
 
@@ -44,6 +49,9 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
+<h1>
+		<center>ChatUs.Com</center>
+	</h1>
 <body data-ng-app="myApp">
 
 	<div class="container-fluid">
@@ -51,7 +59,7 @@
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 
-				<a class="navbar-brand" href="#home"><b>chatus </b>Home</a>
+				<a class="navbar-brand" href="#home"><b>ChatUs.Com </b>Home</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,11 +72,18 @@
 					<li><a href="#chat">Chat</a></li>
 					<li><a href="#jobs">Find Jobs</a></li>
 					<li><a href="#register">SignUp</a></li>
-					<li><a href="#">Login</a></li>
 					
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+					<li><a href="#login"
+						data-ng-hide="globals.currentUser.islogged"><i
+							class="glyphicon glyphicon-log-in"></i></a></li>
+							</ul>
+					</div>
 		</nav>
 	</div>
-	<div data-ng-view></div>
+	<img src="C:\Users\dell1\workspace\ChatUsFrEnd\WebContent\resources\imgs\design_collaboration.jpg" alt="Norway" width="1000" height="300">
+	<div data-ng-view> </div>
 
 
 
