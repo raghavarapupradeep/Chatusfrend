@@ -1,5 +1,4 @@
-var app= angular.module('friendApp', []);
-app.controller('MyFriendCtrl',['$scope','$http',function($scope,$http){
+app.controller('myfriendctrl',['$scope','$http',function($scope,$http){
 	var BASE_URL = 'http://localhost:8181/ChatusBackend';
 	
 	$scope.getmyfriends=function(){

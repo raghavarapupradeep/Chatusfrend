@@ -1,8 +1,7 @@
-var app= angular.module('friendApp', []);
 app.controller('alluserctrl',['$scope','$http',function($scope,$http){
 	var BASE_URL = 'http://localhost:8181/ChatusBackend';
 	$scope.getAllUsers= function() {
-		console.log("userctrl")
+		console.log("usersctrl")
 		console.log("get all users")
 		$http({
 			method : 'GET',
