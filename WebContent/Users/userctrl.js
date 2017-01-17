@@ -63,17 +63,7 @@ app.controller('userctrl', [ '$scope', '$http','$rootScope','$cookieStore', func
 		});
 
 	};
-	/*$scope.profileimage= function() {
-		$http({
-			method : 'GET',
-			url : BASE_URL+'/profileimage',
-		}).success(function(data, status, headers, config) {
-			$scope.img = data.image
-			
-		}).error(function(data, status, headers, config) {
-			alert("Error");
-		});
-	};*/
+	
 	   $(function() {
 		   console.log("edit")
 		    $('#profile-image1').on('click', function() {

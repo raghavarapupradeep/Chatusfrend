@@ -3,14 +3,39 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<script type="text/javascript"  src="../resources/angular.min.js"></script>
+<style type="text/css">
+.btn1 {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border-radius:1px;
+}
+</style>
 </head>
+
 <body data-ng-app="myApp">
 <div data-ng-init="getjobs()">
 <div data-ng-repeat="job in jobs">
-{{job.title}}
-{{job.company}}
-{{job.jobdetails}}
-{{job.lastdate | date:'dd/MM/yyyy'}}
+<div class="container">
+	<div class="row">
+ <div class="span3">
+        	<div class="well">
+        		<h1>Job Title:</h1><h2 class="text-info">{{job.title}}</h2>  
+
+<div class="span3">
+        	
+        		<h3 class="text-info">{{job.company}}</h3></div>
+
+<div class="span3">
+        	
+        		<h3 class="text-info">{{job.jobdetails}}</h3>  </div>
+<div class="span3">
+        
+        		<h3 class="text-info">{{job.jobdetails}}</h3></div>
+        		<button align="right" class="btn btn-primary" data-ng-click="like(blog.id)">Apply Job</button>
+</div></div></div></div></div></div>
 </div>
 </div>
 
