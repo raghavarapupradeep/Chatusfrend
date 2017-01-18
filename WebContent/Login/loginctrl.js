@@ -9,11 +9,7 @@
         vm.login = login;
         vm.logout = logout;
 
-       /* (function initController() {
-        	console.log("reset")
-            // reset login status
-            AuthenticationService.ClearCredentials();
-        })();*/
+      
  
         function login() {
            
