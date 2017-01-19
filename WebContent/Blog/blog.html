@@ -14,6 +14,20 @@
     border-radius:1px;
 }
 </style>
+<style> 
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    outline: none;
+}
+
+input[type=text]:focus {
+    background-color: lightblue;
+}
+</style>
 </head>
 <body data-ng-app="blogapp">
 	
@@ -62,7 +76,7 @@
         		<hr>
               <p><button data-ng-show="blog.userid==globals.currentUser.username" data-ng-click="editblog(blog.id,blog.title,blog.content)" class="btn btn-success">edit</button>
 		<button data-ng-show="blog.userid==globals.currentUser.username" data-ng-click="deleteblog(blog.id)" class="btn btn-primary btn-danger">delete</button>
-		<!-- <button align="right" class="btn btn-primary" data-ng-click="like(blog.id)">Like</button> -->
+		 <button align="right" class="btn btn-primary" data-ng-click="like(blog.id)">Like</button> 
 		<i class="fa fa-thumbs-up"></i>{{blog.bloglike}}</li>
 		</p>
 	        	</div>
