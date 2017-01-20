@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript"  src="../resources/angular.min.js"></script>
+</head>
+<body data-ng-app="blogapp">
+<body>
+<div data-ng-init="getAllBlogs()">
+	 <div data-ng-repeat="blog in blogs | filter:search">
+
+	
+	<div class="container">
+	<div class="row">
+ <div class="span3">
+        	<div class="well">
+        		<h2 class="text-info">{{blog.title}}</h2>  
+        		<hr>        
+        		<p>{{blog.content}}</p>
+        		<hr>
+              <p><button data-ng-show="blog.userid==globals.currentUser.username" data-ng-click="editblog(blog.id,blog.title,blog.content)" class="btn btn-success">edit</button>
+		<button data-ng-show="blog.userid==globals.currentUser.username" data-ng-click="deleteblog(blog.id)" class="btn btn-primary btn-danger">delete</button>
+		 <button align="right" class="btn btn-primary" data-ng-click="like(blog.id)">Like</button> 
+		<i class="fa fa-thumbs-up"></i>{{blog.bloglike}}</li>
+		</p>
+	        	</div>
+        </div></div></div>
+        </div>
+        </div>
+        <script type="text/javascript" src="blogctrl.js"></script>
+</body>
+</html>

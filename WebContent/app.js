@@ -3,6 +3,10 @@ var app = angular.module("myApp", ["ngRoute","ngCookies","blogapp"])
 app.config(function($routeProvider,$locationProvider) {
 	
     $routeProvider
+    .when("/", {
+        templateUrl : "viewblog.html",
+    
+    })
     .when("/home", {
         templateUrl : "Home.html",
         controller:'LoginController',
