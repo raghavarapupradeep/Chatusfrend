@@ -12,7 +12,13 @@ img {
 <meta charset="ISO-8859-1">
 <title>ChatUs.Com||Home</title>
 
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
 <script type="text/javascript" src="resources/angular.min.js"></script>
@@ -40,7 +46,7 @@ img {
 <script type="text/javascript" src="Chat/chatController.js"></script>
 <script type="text/javascript" src="Chat/chatService.js"></script>
 <script type="text/javascript" src="Forum/forumctrl.js"></script>
-<link rel="stylesheet" href="resources/navbar.css">
+<script type="text/javascript" src="Forum/commentctrl.js"></script>
 <link rel="stylesheet" href="resources/blog.css">
 <link rel="stylesheet" href="resources/register.css">
 <link rel="stylesheet" href="resources/user.css">
@@ -56,11 +62,9 @@ img {
 	</h1>
 <body data-ng-app="myApp">
 
-	<div class="container-fluid">
-	 <nav class="navbar navbar-default navbar-xs" role="navigation">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-
+	          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+             <div class="navbar-header">
 				<a class="navbar-brand" href="#home"><b>ChatUs.Com </b>Home</a>
 			</div>
 
@@ -68,8 +72,29 @@ img {
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="#blog">Blog</i></a></li>
-					<li><a href="#forum">Forum</a></li>
+				 <!-- <li><a href="#blog">Blog</a></li> 
+				 <li><a href="#viewblog">View Blogs</a></li> -->
+				  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#blog">CreateBlog</a></li>
+          <li><a href="#viewblog">ViewBlog</a></li>
+          
+        </ul>
+      </li> 
+				<!--  <li><a href="#forum">Forum</a></li>
+				 <li><a href="#individualforum">View Forum</a></li> -->
+				 
+				  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Forums
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#forum">CreateForum</li>
+          <li><a href="#viewforum">ViewForum</a></li>
+          
+        </ul>
+      </li> 
 					<li><a href="#users">Find Friends</a></li>
 					<li><a href="#chat">Chat</a></li>
 					<li><a href="#jobs">Find Jobs</a></li>
@@ -80,14 +105,16 @@ img {
 					 <li><a href="#register" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-user"></i></a></li>
 					<li><a href="#login"
 						data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li>
-							<!-- <li><a href="#login" data-ng-hide="globals.currentUser.islogged"><i class="glyphicon glyphicon-log-in"></i></a></li> -->
-                             <li style="padding-top:15px;" data-ng-show="globals.currentUser.islogged">Welcome:{{globals.currentUser.username}}</li>
+							
+                             <li class=style="padding-top:10px;" data-ng-show="globals.currentUser.islogged"><p style="color:white";>Welcome:{{globals.currentUser.username}}</p></li>
                              <li data-ng-show="globals.currentUser.islogged"><a href="#myprofile">My Profile</a></li>
                               <li data-ng-show="globals.currentUser.islogged"><a href=""  data-ng-controller="LoginController" data-ng-click="vm.logout()"></a></li>
 							</ul><!-- {{currentUser.id}} -->
 					</div>
+						</div>
+	
 		</nav>
-	</div>
+
 	<img src="C:\Users\dell1\workspace\ChatUsFrEnd\WebContent\resources\imgs\design_collaboration.jpg" alt="Norway" width="1000" height="300">
 	<div data-ng-view> </div>
 	

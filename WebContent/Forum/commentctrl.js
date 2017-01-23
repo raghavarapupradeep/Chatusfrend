@@ -1,4 +1,5 @@
-app.controller('commentctrl', [ '$scope', '$http','$rootScope', function($scope, $http,$rootScope) {
+app.controller('commentctrl', [ '$scope', '$http','$rootScope', 
+	function($scope, $http,$rootScope) {
 	var BASE_URL = 'http://localhost:8181/ChatusBackend';
 	$scope.iforum=$rootScope.individualforums;
 	//console.log(individualforums)
