@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ["ngRoute","ngCookies","blogapp"])
+var app = angular.module("myApp", ["ngRoute","ngCookies","blogapp","jobApp"])
 .run(run);
 app.config(function($routeProvider,$locationProvider) {
 	
@@ -7,6 +7,7 @@ app.config(function($routeProvider,$locationProvider) {
         templateUrl : "viewblog.html",
     
     })
+     
     .when("/home", {
         templateUrl : "Home.html",
         controller:'LoginController',
@@ -50,7 +51,7 @@ app.config(function($routeProvider,$locationProvider) {
     	controller: "chatController",
     })
     .when("/jobs",{
-    	templateUrl: "Job/ViewJob.html",
+    	templateUrl: "Job/CreateJob.html",
     	controller: "jobctrl"
     })
     .when("/individualforum",{
@@ -68,6 +69,10 @@ app.config(function($routeProvider,$locationProvider) {
     .when("/newrequests",{
     	templateUrl: "Friend/newrequests.html",
     	controller: "myfriendctrl"
+    })
+    .when("/admin",{
+    	templateUrl: "Admin/admin.html",
+    	controller: "adminctrl"
     });
     console.log("route");    });
 run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
@@ -82,9 +87,13 @@ function run($rootScope, $location, $cookieStore, $http) {
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
         // redirect to login page if not logged in and trying to access a restricted page
         var restrictedPage = $.inArray($location.path(), ['/login', '/register','/home','/jobs','/viewblog','/viewforum']) === -1;
+        var adminPage = $.inArray($location.path(),['/admin']) === 1;
+        var role=$rootScope.currentuser.role;
         var loggedIn = $rootScope.globals.currentUser;
         if (restrictedPage && !loggedIn) {
             $location.path('/login');
+        }else if(adminPage && !loggedIn){
+        	$location.path('/login');
         }
     });
 }

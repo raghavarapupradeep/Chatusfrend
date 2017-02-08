@@ -1,3 +1,5 @@
+
+var app=angular.module("jobApp",[])
 app.controller('jobctrl', ['$scope','$http',function($scope,$http) {
 	var BASE_URL = 'http://localhost:8181/ChatusBackend';
 	$scope.submit=function(){
@@ -13,6 +15,7 @@ app.controller('jobctrl', ['$scope','$http',function($scope,$http) {
 			url : BASE_URL+'/createjob'
 		}).success(function(data, status, headers, config) {
 			$scope.users=data;
+			data : $scope.job
 			//alert(data); 
 		}).error(function(data, status, headers, config) {
 			alert("Error");

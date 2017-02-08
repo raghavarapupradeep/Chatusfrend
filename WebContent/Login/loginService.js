@@ -15,12 +15,12 @@ var BASE_URL = 'http://localhost:8181/ChatusBackend';
         	$http({
     			method:'GET',
     		   url:BASE_URL+'/login/'+username+'/'+password
-    		}).success(function (response,data,status,headers,config) {
+    		}).success(function(response) {
     			$rootScope.currentuser=response;
-    			
-    			console.log(data)
+        //var role=response;
+            
+    			//console.log(role.role)
     			if(response!=null){
-    				
     				 response = { success: true };
                 } else {
                     response = { success: false, message: 'Username or password is incorrect' };

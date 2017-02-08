@@ -42,6 +42,9 @@ img {
 <script type="text/javascript" src="Chat/chatService.js"></script>
 <script type="text/javascript" src="Forum/forumctrl.js"></script>
 <script type="text/javascript" src="Forum/commentctrl.js"></script>
+<script type="text/javascript" src="Admin/admin.js"></script>
+
+
 <link rel="stylesheet" href="resources/blog.css">
 <link rel="stylesheet" href="resources/register.css">
 <link rel="stylesheet" href="resources/user.css">
@@ -60,7 +63,8 @@ img {
 	          <nav class="navbar navbar-inverse">
             <div class="container-fluid">
              <div class="navbar-header">
-				<a class="navbar-brand" href="#home"><b>ChatUs.Com </b>Home</a>
+             
+				<a class="navbar-brand" href="#home"><b> </b>Home</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -69,7 +73,10 @@ img {
 				<ul class="nav navbar-nav">
 				 <!-- <li><a href="#blog">Blog</a></li> 
 				 <li><a href="#viewblog">View Blogs</a></li> -->
+			
 				  <li class="dropdown">
+				  
+				 
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -90,9 +97,10 @@ img {
           
         </ul>
       </li> 
-					<li><a href="#users">Find Friends</a></li>
-					<li><a href="#chat">Chat</a></li>
-					<li><a href="#jobs">Find Jobs</a></li>
+					<li data-ng-hide="currentuser.role=='Admin'"><a href="#users">Find Friends</a></li>
+					<li data-ng-hide="currentuser.role=='Admin'"><a href="#chat">Chat</a></li>
+					<li><a href="#jobs"> Jobs</a></li>
+					
 					
 					
 					</ul>

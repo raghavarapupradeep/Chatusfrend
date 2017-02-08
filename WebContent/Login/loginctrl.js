@@ -19,9 +19,15 @@
                console.log("setcred")
                
                 	AuthenticationService.SetCredentials(vm.username, vm.password);
+               var role=$rootScope.currentuser.role;
+               console.log("role")
+               if(role=="Admin"){
+            	   $location.path('/admin');
+            	   $rootScope.islogged=true;
+               }else{
                     $location.path('/home');
                   $rootScope.islogged=true;
-                	
+               }
                 } else {
                 	console.log("error")
                   //  FlashService.Error(response.message);
