@@ -54,6 +54,10 @@ app.config(function($routeProvider,$locationProvider) {
     	templateUrl: "Job/CreateJob.html",
     	controller: "jobctrl"
     })
+    .when("/applyjob",{
+    	templateUrl: "Job/ViewJob.html",
+    	controller: "jobctrl"
+    })
     .when("/individualforum",{
     	templateUrl: "Forum/IndividualForum.html",
 	controller: "commentctrl"
@@ -86,7 +90,7 @@ function run($rootScope, $location, $cookieStore, $http) {
 
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
         // redirect to login page if not logged in and trying to access a restricted page
-        var restrictedPage = $.inArray($location.path(), ['/login', '/register','/home','/jobs','/viewblog','/viewforum']) === -1;
+        var restrictedPage = $.inArray($location.path(), ['/login', '/register','/home','/viewblog','/viewforum']) === -1;
         var adminPage = $.inArray($location.path(),['/admin']) === 1;
         var role=$rootScope.currentuser.role;
         var loggedIn = $rootScope.globals.currentUser;

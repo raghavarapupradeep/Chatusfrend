@@ -12,10 +12,11 @@ app.controller('jobctrl', ['$scope','$http',function($scope,$http) {
 			}
 		$http({
 			method : 'POST',
-			url : BASE_URL+'/createjob'
+			url : BASE_URL+'/createjob',
+			data : $scope.job
 		}).success(function(data, status, headers, config) {
 			$scope.users=data;
-			data : $scope.job
+			
 			//alert(data); 
 		}).error(function(data, status, headers, config) {
 			alert("Error");

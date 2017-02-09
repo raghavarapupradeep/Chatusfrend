@@ -85,6 +85,15 @@ img {
           
         </ul>
       </li> 
+       <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Jobs
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li data-ng-show="currentuser.role=='Admin'"><a href="#jobs">CreateJob</a></li>
+          <li data-ng-show="currentuser.role=='Student'"><a href="#applyjob">ApplyJobs</a></li>
+          
+        </ul>
+      </li> 
 				<!--  <li><a href="#forum">Forum</a></li>
 				 <li><a href="#individualforum">View Forum</a></li> -->
 				 
@@ -92,14 +101,14 @@ img {
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Forums
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#forum">CreateForum</li>
+          <li><a href="#forum">CreateForum</a></li>
           <li><a href="#viewforum">ViewForum</a></li>
           
         </ul>
       </li> 
 					<li data-ng-hide="currentuser.role=='Admin'"><a href="#users">Find Friends</a></li>
 					<li data-ng-hide="currentuser.role=='Admin'"><a href="#chat">Chat</a></li>
-					<li><a href="#jobs"> Jobs</a></li>
+					
 					
 					
 					
