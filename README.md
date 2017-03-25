@@ -1,4 +1,5 @@
-   #ChatUs.com - CollaborationProject②
+
+#ChatUs.com - CollaborationProject
 
 Collaboration project consisting of basic funtionality like
 
